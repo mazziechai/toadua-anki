@@ -161,3 +161,4 @@ cython_debug/
 .pdm-python
 
 toaduanki.ankiaddon
+toaduanki/entry_ui.py
