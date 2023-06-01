@@ -310,7 +310,7 @@ dependencies = [
 lock_version = "4.2"
 cross_platform = true
 groups = ["default"]
-content_hash = "sha256:3c1890b7336ba3a902b658a91134046bb12f7c0d3bf1e6b38d993b7f675a3484"
+content_hash = "sha256:9e3d85fecf409ec189bbb9092b9136fac9b6f07e757320c44a5aaa656ed283ca"
 
 [metadata.files]
 "anki 2.1.64" = [

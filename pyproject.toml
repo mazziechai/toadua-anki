@@ -7,12 +7,14 @@ authors = [
 ]
 dependencies = [
     "aqt[qt6]>=2.1.64",
+    "requests>=2.31.0",
 ]
 requires-python = ">=3.11"
 license = {text = "MIT"}
 
 [tool.pdm.scripts]
-
 pkg = { shell = "zip toaduanki.ankiaddon manifest.json && cd toaduanki && zip -r ../toaduanki.ankiaddon *" }
-fp = { shell = "flatpak run net.ankiweb.Anki" }
 ui = "pyuic6 -o toaduanki/entry_ui.py qt/entry.ui"
+
+[tool.setuptools.packages.find]
+exclude = ["qt"]
