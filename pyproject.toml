@@ -16,5 +16,12 @@ license = {text = "MIT"}
 pkg = { shell = "zip toaduanki.ankiaddon manifest.json && cd toaduanki && zip -r ../toaduanki.ankiaddon *" }
 ui = "pyuic6 -o toaduanki/entry_ui.py qt/entry.ui"
 
+[tool.pdm.dev-dependencies]
+dev = [
+    "black>=23.3.0",
+    "pre-commit>=3.3.2",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+]
 [tool.setuptools.packages.find]
 exclude = ["qt"]

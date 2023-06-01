@@ -3,6 +3,7 @@ from aqt.qt import QDialog
 from .entry_ui import Ui_Entry
 from .toadua import get_toadua_entry
 
+
 class EntryDialog(QDialog, Ui_Entry):
     def __init__(self, *args, **kwargs):
         super(EntryDialog, self).__init__(*args, **kwargs)

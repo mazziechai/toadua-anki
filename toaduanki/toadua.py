@@ -1,8 +1,9 @@
 import requests
 
+
 def get_toadua_entry(id: str) -> dict[str, str]:
     print(id)
-    query = { "action": "search", "query": ["id", id]}
+    query = {"action": "search", "query": ["id", id]}
 
     request = requests.post("https://toadua.uakci.pl/api", json=query)
 
@@ -21,3 +22,6 @@ def get_toadua_entry(id: str) -> dict[str, str]:
         print("invalid word")
         raise KeyError
 
+
+def create_card(word: dict[str, str]):
+    pass
