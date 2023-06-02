@@ -1,0 +1,89 @@
+{
+    "name": "Toadua",
+    "tmpls": [
+        {
+            "name": "Card 1",
+            "ord": 0,
+            "qfmt": "{{Word}}\n<br>\n{{Derani}}",
+            "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n{{Definition}}\n<br><br>\n\n<details>\n<summary>Toadua info</summary>\n#{{ID}}\n<br>\n{{#Notes}}\n<details>\n<summary>Notes</summary>\n{{Notes}}\n</details>\n{{/Notes}}\n</details>\n\n",
+            "bqfmt": "",
+            "bafmt": "",
+            "did": null,
+            "bfont": "",
+            "bsize": 0
+        },
+        {
+            "name": "Card 2",
+            "ord": 1,
+            "qfmt": "{{Definition}}",
+            "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n{{Word}}\n<br>\n{{Derani}}\n<br><br>\n\n<details>\n<summary>Toadua info</summary>\n#{{ID}}\n<br>\n{{#Notes}}\n<details>\n<summary>Notes</summary>\n{{Notes}}\n</details>\n{{/Notes}}\n</details>\n\n",
+            "bqfmt": "",
+            "bafmt": "",
+            "did": null,
+            "bfont": "",
+            "bsize": 0
+        }
+    ],
+    "flds": [
+        {
+            "name": "Word",
+            "ord": 0,
+            "sticky": false,
+            "rtl": false,
+            "font": "Liberation Sans",
+            "size": 20,
+            "description": "",
+            "plainText": false,
+            "collapsed": false,
+            "excludeFromSearch": false
+        },
+        {
+            "name": "Definition",
+            "ord": 1,
+            "sticky": false,
+            "rtl": false,
+            "font": "Arial",
+            "size": 20,
+            "description": "",
+            "plainText": false,
+            "collapsed": false,
+            "excludeFromSearch": false
+        },
+        {
+            "name": "Derani",
+            "ord": 2,
+            "sticky": false,
+            "rtl": false,
+            "font": "Arial",
+            "size": 20,
+            "description": "",
+            "plainText": false,
+            "collapsed": false,
+            "excludeFromSearch": false
+        },
+        {
+            "name": "Notes",
+            "ord": 3,
+            "sticky": false,
+            "rtl": false,
+            "font": "Arial",
+            "size": 20,
+            "description": "",
+            "plainText": false,
+            "collapsed": true,
+            "excludeFromSearch": false
+        },
+        {
+            "name": "ID",
+            "ord": 4,
+            "sticky": false,
+            "rtl": false,
+            "font": "Arial",
+            "size": 20,
+            "description": "",
+            "plainText": false,
+            "collapsed": false,
+            "excludeFromSearch": false
+        }
+    ]
+}

@@ -12,8 +12,8 @@ dependencies = [
 requires-python = ">=3.11"
 license = {text = "MIT"}
 
-[tool.pdm.scripts]
-pkg = { shell = "zip toaduanki.ankiaddon manifest.json && cd toaduanki && zip -r ../toaduanki.ankiaddon *" }
+[tool.pdm.scripts] 
+pkg = { shell = "zip -r toaduanki.ankiaddon manifest.json config.json config.md json && cd toaduanki && zip -r ../toaduanki.ankiaddon *" }
 ui = "pyuic6 -o toaduanki/entry_ui.py qt/entry.ui"
 
 [tool.pdm.dev-dependencies]
@@ -24,4 +24,4 @@ dev = [
     "flake8>=6.0.0",
 ]
 [tool.setuptools.packages.find]
-exclude = ["qt"]
+exclude = ["qt", "json"]
