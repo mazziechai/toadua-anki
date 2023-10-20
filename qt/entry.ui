@@ -39,7 +39,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Enter words or #ids, separated by new lines.</string>
+    <string>Enter #ids, separated by new lines.</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
