@@ -2,6 +2,8 @@
 
 An Anki add-on that creates cards from Toadua entries.
 
+It's located in the tools tab.
+
 ## To-do list
 
 - [ ] Easy to use GUI
