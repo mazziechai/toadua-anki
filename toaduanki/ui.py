@@ -14,6 +14,7 @@ class EntryDialog(QDialog, Ui_Dialog):
         self.setupUi(self)
         self.words = []
         self.timer = QTimer(self)
+        self.timer.setSingleShot(True)
         self.timer.timeout.connect(self.search)
         self.lineEdit.textChanged.connect(self.start_timer)
 
