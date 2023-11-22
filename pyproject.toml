@@ -8,13 +8,14 @@ authors = [
 dependencies = [
     "aqt[qt6]>=2.1.64",
     "requests>=2.31.0",
+    "pyyaml>=6.0.1",
 ]
 requires-python = ">=3.11"
 license = {text = "MIT"}
 
-[tool.pdm.scripts] 
+[tool.pdm.scripts]
 pkg = { shell = "zip -r toaduanki.ankiaddon manifest.json config.json config.md json && cd toaduanki && zip -r ../toaduanki.ankiaddon *" }
-ui = "pyuic6 -o toaduanki/entry_ui.py qt/entry.ui"
+ui = "pyuic6 -o toaduanki/toadua_ui.py qt/toadua.ui"
 
 [tool.pdm.dev-dependencies]
 dev = [

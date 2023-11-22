@@ -8,36 +8,36 @@ from anki.collection import Collection
 from .config import config
 
 
-def get_toadua_entries_by_id(ids: list[str]) -> list[dict[str, Any]]:
-    search_param = ["or"]
+def search_toadua(query) -> list[dict[str, Any]]:
+    body = {"action": "search", "query": query, "limit": 30}
 
-    for word_id in ids:
-        search_param.append(["id", word_id])  # type: ignore
-
-    query = {"action": "search", "query": search_param}
-
-    request = requests.post("https://toadua.uakci.pl/api", json=query)
+    request = requests.post("https://toadua.uakci.pl/api", json=body)
 
     response = request.json()
 
     results: list[dict[str, Any]] = response["results"]
 
-    return list(
-        map(
-            lambda entry: {
-                "id": entry["id"],
-                "word": entry["head"],
-                "def": entry["body"],
-                "notes": list(
-                    map(
-                        lambda note: f"{note['user']}: {note['content']}\n",
-                        entry["notes"],
-                    )
-                ),
-            },
-            results,
-        )
-    )
+    return [{
+        "id": entry["id"],
+        "word": entry["head"],
+        "def": entry["body"],
+        "notes": [f"{note['user']}: {note['content']}\n" for note in entry["notes"]],
+    } for entry in results]
+
+
+def get_toadua_entries_by_id(ids: list[str]) -> list[dict[str, Any]]:
+    search_param = ["or"]
+
+    for word_id in ids:
+        search_param.append(["id", word_id])  # type: ignore
+    return search_toadua(search_param)
+
+
+def get_toadua_entries_by_word(word: str) -> list[dict[str, Any]]:
+    if not word:
+        return []
+    scope = config["scope"]
+    return search_toadua(["and", ["scope", scope], ["term", word]])
 
 
 def add_notes_to_col(col: Collection, words: list[dict[str, Any]]) -> int:
