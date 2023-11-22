@@ -17,12 +17,17 @@ def search_toadua(query) -> list[dict[str, Any]]:
 
     results: list[dict[str, Any]] = response["results"]
 
-    return [{
-        "id": entry["id"],
-        "word": entry["head"],
-        "def": entry["body"],
-        "notes": [f"{note['user']}: {note['content']}\n" for note in entry["notes"]],
-    } for entry in results]
+    return [
+        {
+            "id": entry["id"],
+            "word": entry["head"],
+            "def": entry["body"],
+            "notes": [
+                f"{note['user']}: {note['content']}\n" for note in entry["notes"]
+            ],
+        }
+        for entry in results
+    ]
 
 
 def get_toadua_entries_by_id(ids: list[str]) -> list[dict[str, Any]]:

@@ -1,12 +1,10 @@
-from aqt import QMessageBox
 from aqt.operations import QueryOp
 from aqt.qt import QDialog
 from aqt.utils import showInfo
+from PyQt6 import QtGui
 
-from PyQt6 import QtCore, QtGui, QtWidgets
-
+from .toadua import add_notes_to_col, get_toadua_entries_by_word
 from .toadua_ui import Ui_Dialog
-from .toadua import add_notes_to_col, get_toadua_entries_by_id, get_toadua_entries_by_word
 
 
 class EntryDialog(QDialog, Ui_Dialog):
@@ -34,7 +32,6 @@ class EntryDialog(QDialog, Ui_Dialog):
         for w in words:
             item = QtGui.QStandardItem(w["word"] + ": " + w["def"])
             model.appendRow(item)
-
 
     def accept(self):
         indexes = self.listView.selectedIndexes()
