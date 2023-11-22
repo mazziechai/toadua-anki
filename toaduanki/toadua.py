@@ -41,8 +41,9 @@ def get_toadua_entries_by_id(ids: list[str]) -> list[dict[str, Any]]:
 def get_toadua_entries_by_word(word: str) -> list[dict[str, Any]]:
     if not word:
         return []
-    scope = config["scope"]
-    return search_toadua(["and", ["scope", scope], ["term", word]])
+    if "scope:" not in word:
+        word = "scope:" + config["scope"] + " " + word
+    return search_toadua(word)
 
 
 def add_notes_to_col(col: Collection, words: list[dict[str, Any]]) -> int:
