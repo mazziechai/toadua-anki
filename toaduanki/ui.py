@@ -2,6 +2,7 @@ from aqt.operations import QueryOp
 from aqt.qt import QDialog
 from aqt.utils import showInfo
 from PyQt6 import QtGui
+from PyQt6.QtCore import QTimer
 
 from .toadua import add_notes_to_col, get_toadua_entries_by_word
 from .toadua_ui import Ui_Dialog
@@ -11,10 +12,15 @@ class EntryDialog(QDialog, Ui_Dialog):
     def __init__(self, *args, **kwargs):
         super(EntryDialog, self).__init__(*args, **kwargs)
         self.setupUi(self)
-        self.lineEdit.textChanged.connect(self.onchange)
         self.words = []
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.search)
+        self.lineEdit.textChanged.connect(self.start_timer)
 
-    def onchange(self):
+    def start_timer(self):
+        self.timer.start(200)
+
+    def search(self):
         word = self.lineEdit.text()
 
         op = QueryOp(
