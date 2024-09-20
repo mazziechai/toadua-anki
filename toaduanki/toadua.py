@@ -11,7 +11,7 @@ from .config import config
 def search_toadua(query) -> list[dict[str, Any]]:
     body = {"action": "search", "query": query, "limit": 30}
 
-    request = requests.post("https://toadua.uakci.pl/api", json=body)
+    request = requests.post("https://toadua.uakci.space/api", json=body)
 
     response = request.json()
 
